@@ -17,7 +17,7 @@ function isPalindrome(word) {
   }
 
   // pop off the stack in reverse order
-  for (let i = 0; i < word.length; i++) {
+  for (const element of word) {
     rword += letters.pop();
   }
 
