@@ -177,6 +177,7 @@ class BinarySearchTree {
 
 const binaryTree = new BinarySearchTree();
 
+// @TODO: Do docs of this inserts parts, and how i fixed the loop bug
 binaryTree.insert(15);
 binaryTree.insert(25);
 binaryTree.insert(10);
