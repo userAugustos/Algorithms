@@ -5,7 +5,7 @@
  */
 
 class Node {
-  constructor() {
+  constructor(data) {
     this.data = data;
     this.left = null;
     this.right = null;
@@ -27,7 +27,7 @@ class BinarySearchTree {
     // if root is null, then a newNode will be add to the not and create a root
     if (!this.root) {
       // null doesn't pass in this validation, so no need to compare
-      this.root = newNode;
+      return (this.root = newNode);
     }
 
     this.insertNode(this.root, newNode);
@@ -45,16 +45,20 @@ class BinarySearchTree {
       // se ainda não tem nada a esquerda
       if (!node.left) {
         node.left = newNode;
+        console.log("left", node.right);
+        return;
       }
       // então se já tem algo a esquerda, recursividade com, agora com o nó a esquerda, até o valor ser null. (ou seja, até não haver mais filhos a esquerda dessa arvore)
-      this.insertNode(node.left, newNode);
+      return this.insertNode(node.left, newNode);
     }
     // se não vai pra esquerda, vai pra direta
     if (!node.right) {
       node.right = newNode;
+      console.log("right", node.right);
+      return;
+      // mesma regra a cima, se o galho a direita da nossa arvore, já tem um valor, descemos mais um galho, repassando o valor a arvore a direita, até não haver um valor
     }
-    // mesma regra a cima, se o galho a direita da nossa arvore, já tem um valor, descemos mais um galho, repassando o valor a arvore a direita, até não haver um valor
-    this.insertNode(node.right, newNode);
+    return this.insertNode(node.right, newNode);
   }
   /**
    *
@@ -112,4 +116,77 @@ class BinarySearchTree {
     node.right = this.removeNode(node.right, aux.data);
     return node;
   }
+
+  /**
+   * Formas de percorrer uma arvore de pesquisa de pesquisa binária
+   */
+
+  inorder(node) {
+    if (node) {
+      this.inorder(node.left);
+      console.log(node.data);
+      this.inorder(node.right);
+      return;
+    }
+    return;
+  }
+
+  preorder(node) {
+    if (node) {
+      console.debug(node.data);
+      this.preorder(node.left);
+      this.preorder(node.right);
+    }
+  }
+
+  postorder(node) {
+    this.postorder(node.left);
+    this.postorder(node.right);
+    console.debug(node.data);
+  }
+
+  findMinNode(node) {
+    if (!node.left) {
+      // isso amigos, é elegância, se a esquerda é sempre o minimo, e não tem nada a esquerda, então já estamos no minimo
+      return node;
+    }
+    return this.findMinNode(node);
+  }
+
+  getRootNode() {
+    //"getter"
+    return this.root;
+  }
+
+  search(node, data) {
+    if (!node) {
+      return null;
+    }
+
+    if (data < node.data) {
+      return this.search(node.left, data);
+    }
+
+    if (data > node.data) {
+      return this.search(node.right, data);
+    }
+
+    return node;
+  }
 }
+
+const binaryTree = new BinarySearchTree();
+
+binaryTree.insert(15);
+binaryTree.insert(25);
+binaryTree.insert(10);
+binaryTree.insert(7);
+binaryTree.insert(22);
+binaryTree.insert(17);
+binaryTree.insert(13);
+binaryTree.insert(5);
+binaryTree.insert(9);
+binaryTree.insert(27);
+
+const root = binaryTree.getRootNode();
+binaryTree.inorder(root);
