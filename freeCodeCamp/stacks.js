@@ -3,40 +3,9 @@
 /* functions: psuh, pop, peek, length
 in javascript, all arrays already come with stacks methods to treat this data structures.
 
-So let's work at a palimdrome search
-*/
-
-function isPalindrome(word) {
-  let letters = [];
-
-  let rword = "";
-
-  // put letters of word into stack
-  for (let i = 0; i < word.length; i++) {
-    letters.push(word[i]);
-  }
-
-  // pop off the stack in reverse order
-  for (const element of word) {
-    rword += letters.pop();
-  }
-
-  if (rword !== word) {
-    return `${word} is not a palindrome!`;
-  }
-
-  return `${word} is a palindrome!`;
-}
-
-console.debug(isPalindrome("racecar"));
-
-console.debug(isPalindrome("algo"));
-
 /* So, as i said, in javascript all variables typed as an array, will have by vannila this methods
 but, let's create your on, only for fun:
 */
-
-// our stack
 
 class Stack {
   constructor() {

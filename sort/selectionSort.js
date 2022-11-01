@@ -11,7 +11,7 @@ function selectionSort(arr) {
       }
     }
 
-    if (min != i) {
+    if (min !== i) {
       let temp = arr[i];
       arr[i] = arr[min];
       arr[min] = temp;
