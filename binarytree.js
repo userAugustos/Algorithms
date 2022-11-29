@@ -24,10 +24,11 @@ class BinarySearchTree {
     // defining a node with data value
     let newNode = new Node(data);
 
-    // if root is null, then a newNode will be add to the not and create a root
+    // if root is null, then a newNode will be added to the node and create a root
     if (!this.root) {
       // null doesn't pass in this validation, so no need to compare
-      return (this.root = newNode);
+      this.root = newNode
+      return;
     }
 
     this.insertNode(this.root, newNode);
@@ -128,7 +129,6 @@ class BinarySearchTree {
       this.inorder(node.right);
       return;
     }
-    return;
   }
 
   preorder(node) {
