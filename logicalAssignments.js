@@ -2,7 +2,6 @@ const user = {name: "Cory", email: ''};
 
 // intresting to see here, that '' will be considered "falsy"
 
-
 /* Logical AND
     So with AND we check if the value is truthy than assigns
 */
@@ -22,7 +21,7 @@ const updateUserInfos = {
     email: "f@gmail.com"
 }
 
-user.name ||= updateUserInfos.name // So here, user.name already existis, so we will not update with data in updateUserInfos
+user.name ||= updateUserInfos.name // So here, user.name already exists, so we will not update with data in updateUserInfos
 console.debug(user.name)
 
 user.email ||= updateUserInfos.email // and here, we will update user information with new email
@@ -30,7 +29,6 @@ console.debug(user.email)
 
 
 // u can think about OR in some IF situations, like
-
 const someFetchData = {
     x: undefined,
     y: "Y"
