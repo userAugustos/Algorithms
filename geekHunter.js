@@ -1,15 +1,8 @@
-//Você deve alterar o conteudo desta funcao para processar as entradas de acordo.
-function processarLinha(linha) {
-    return linha;
-}
-
-
 
 //Este e um exemplo de processamento de entradas (inputs), sinta-se a vontade para altera-lo conforme necessidade da questao.
 function main(entradas) {
     const linhas = entradas.trim().split("\n"); //separa as entradas por linha e converte em um ARRAY de STRINGS.
-
-    console.debug(linhas)
+    const sales = []
     for (let i=0; i < linhas.length; i++) {
         let linha_entrada;
         try {
@@ -17,22 +10,39 @@ function main(entradas) {
         } catch {
             linha_entrada = linhas[i]; //mantem como string porque o eval falhou em converter pra inteiro ou array.
         }
-        if (!linha_entrada || linha_entrada !== "") {
-            const resultado_processado = processarLinha(linha_entrada);
-            if (resultado_processado) {
-                console.log("resultado", resultado_processado);
-            }
+        if (linha_entrada?.length > 1) {
+             sales.push(linha_entrada.split(" ").map(number => Number(number)))
         }
+    }
+
+    const orderedSales = orderSales(sales[0]) // index 0 will be the numbers of all sales
+    const carlosSales = sales[1]
+
+    for (let i in carlosSales) {
+        let newArr = orderSales([...orderedSales, carlosSales[i]])
+
+        const position = newArr.findIndex(value => value === carlosSales[i]) - 1
+
+        console.debug(position)
     }
 }
 
-//o codigo abaixo nao deve ser alterado, só serve pra processar os inputs.
-process.stdin.resume();
-process.stdin.setEncoding("utf-8");
-var stdin_input = "";
-process.stdin.on("data", function (input) {
-    stdin_input += input;
-});
-process.stdin.on("end", function () {
-    main(stdin_input);
-});
+function orderSales(sales) {
+    for (let i = 0; i < sales.length - 1; i++) {
+        for (let j = 0; j < sales.length - i - 1; j++) {
+            if (sales[j] < sales[j + 1]) {
+                // troca os elementos de posição
+                let temp = sales[j];
+                sales[j] = sales[j + 1];
+                sales[j + 1] = temp;
+            }
+        }
+    }
+    return sales
+}
+
+main("7\n" +
+    "\n" +
+    "55 100 100 40 100 50 35\n" +
+    "\n" +
+    "20 60 40 10")
