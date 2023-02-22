@@ -1,12 +1,10 @@
 from typing import List
 
-def length(arr: List[any]):
-    qtd = 0
-    if(arr[qtd:qtd+1] is False): #python keeps being crazy bruh
-        qtd =+ 1
-        return qtd
-    arr.pop(qtd) # removing by index with qtd
-    qtd =+ 1
-    length(arr)
+def length(arr: List[any], qtd: int = 0):
+    if not arr:
+      return qtd
+    arr.pop(0)
+
+    return length(arr, qtd+1)
     
-    print(length([1,2]))
+print(length([1,2,3,4,34]))
