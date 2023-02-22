@@ -15,7 +15,6 @@ keys = [
 # So to talk about recursive, look at this code, right now, we only want to find one key, then we loop through the array, and through eack directorie, returning when we find the key
 # the way i write it, it could be easly changed to return all keys finded in, but let's keep that, because in this example, we can see, how could be easily to write and read it in a recursive way
 
-
 def search_key(box_of_keys: list[dict[str, str]]):
     stack = box_of_keys
     while len(stack) >= 0:
@@ -25,9 +24,7 @@ def search_key(box_of_keys: list[dict[str, str]]):
     else:
         stack.remove(item)
 
-
 # print(search_key(keys))
-
 # recursive
 # so as you can see, we can make some recursive codes, that looks better or fit better in some solution, there is no need to recursive code btw, since for every recursive code, we also had a loop approach, and also, is hard to meansure which one is faster or better (it depends on the solution), but most of the time, loops will have better performance
 def recursive_search(box_of_keys: list[dict[str, str, ]]):
@@ -37,7 +34,6 @@ def recursive_search(box_of_keys: list[dict[str, str, ]]):
         recursive_search(box_of_keys)
       else:
         print(item)
-
 
 # print(keys)
 print(recursive_search(keys))
