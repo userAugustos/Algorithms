@@ -38,6 +38,5 @@ def recursive_search(box_of_keys: list[dict[str, str, ]]):
 # print(keys)
 print(recursive_search(keys))
 
-
 # Exercise 3.2
 # Se uma função recursiva entrar em loop infinito, a pilha, vai continuar a se encher de chamadas, guardando estado, e ocupando espaço na memória, até exceder o limite de memória da máquina
