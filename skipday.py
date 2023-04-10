@@ -12,7 +12,7 @@ def repeat_string( date, skip_interval):
     num_skips = 0
     while day < num_days:
         current_date = start_date + timedelta(days=day)
-        current_string = f"hello Fe {current_date.isoformat()[:-3]}"
+        current_string = f"git commit --allow-empty --date {current_date.isoformat()[:-3]}" + "-03:00)}" + " -m 'chore: something that was wasted up'"
         result[day] = current_string
 
         # Decide whether to skip 1 or 2 days every skip_interval days
