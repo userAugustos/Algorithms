@@ -8,7 +8,7 @@ const user = {name: "Cory", email: ''};
 user.name &&= "Felipe" // Name is truth than JS will replace the name
 console.debug(user.name)
 
-user.email &&= "f@gmail.com" // email is empty so JS will pass by this assign
+user.email &&= "f@gmail.com" // email is truth so JS will pass by this assign
 console.debug(user.email)
 
 /* Logical OR
