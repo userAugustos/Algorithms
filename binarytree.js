@@ -4,7 +4,7 @@
  * > Uma árvore de pesquisa binária é uma árvore binária na qual os nós com menor valor são armazenados à esquerda, enquanto os nós de maior valor são armazenados à direta
  */
 
-class Node {
+class Node{
   constructor(data) {
     this.data = data;
     this.left = null;
