@@ -12,3 +12,10 @@ E pra isso que entramos com o conceito de VIRTUAL DOM, esse VIRTUAL DOM é uma r
 O Vitural DOM é uma copia do DOM real, armazenada em memória, que vai servir para, ao finalizada e aplicadas alterações, se comparar com o DOM real e buscar apenas as alterações necessárias, uma estratégia chamada `reconciliação`, que é muito eficiente, já que é capaz de identificar as alterações específicas que precisam ser feitas no DOM real.
 
 	Em resumo, a diferença entre o DOM real e o Virtual DOM é que o DOM real é a representação concreta da página HTML no navegador, enquanto o Virtual DOM é uma representação virtual e leve usada para otimizar as atualizações do DOM real, tornando-as mais eficientes e rápidas.
+
+### CSS
+
+```
+@media all and (max-width: 480px) and (orientation: landscape)
+```
+landscape pode ajudar com coisas como movimentação de um navbar, [docs](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Responsive/responsive_design_building_blocks#fluid_grids)

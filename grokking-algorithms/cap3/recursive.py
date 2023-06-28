@@ -37,7 +37,7 @@ def recursive_search(box_of_keys: list[dict[str, str]]):
       else:
         box_of_keys.remove(item)	
         recursive_search(box_of_keys)
-# print(keys)
+        
 print(recursive_search(keys))
 
 # Exercise 3.2
