@@ -56,7 +56,6 @@ print("array original:", array_input)
 quick_sort(array_input, 0, num_items-1)
 print("array ordenado:", array_input)
 
-
 # exemplo de tuple unpacking
 
 lista = [2, 7, 10, 18, 56]
