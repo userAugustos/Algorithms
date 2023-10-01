@@ -28,15 +28,22 @@ print(quicksort(arr))
 
 
 def find_pivot_index(array, start, end):
-  pivot=array[end]
-  p_index=start
+  pivot=array[end] #escolhe o ultimo elemento do array como pivot
+  index=start #index é o que usamos para ir da esquerda para a direita passando pelo array
+  
+  # iter é o J
+  # o index é o q
+  
   for iter in range(start, end):
     if array[iter] <= pivot:
-      # A sintaxe usada aqui se chama "tuple unpacking", veja um exemplo mais a baixo
-      array[p_index], array[iter]=array[iter],array[p_index]
-      p_index+=1
-  array[p_index],array[end] = pivot,array[p_index]
-  return p_index
+      temp = array[index]
+      array[index] = array[iter]
+      array[iter] = temp
+      index+=1
+  temp = array[index]
+  array[index] = pivot
+  array[end] = temp
+  return index
 
 def quick_sort(arr, start,end):
   if start<end:
