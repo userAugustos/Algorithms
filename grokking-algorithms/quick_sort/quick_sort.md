@@ -57,7 +57,3 @@ Se now, we gonna entry the hole loop again, for each side of the array, until it
 
 We have a solution where we make a partition on the array, and change positions in the same array, consuming less memory and going FAST!!
 
-Let's dive into this solution
-
-
-    
