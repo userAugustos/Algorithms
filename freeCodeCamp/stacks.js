@@ -22,7 +22,7 @@ class Stack {
   // removes and returns the value at the end of the stack
   pop() {
     if (this.count === 0) {
-      return undefined;
+      return [];
     }
 
     this.count--; // we need to decrement count, since we are removing and finding the last value
@@ -31,7 +31,7 @@ class Stack {
     return result;
   }
 
-  size() {
+  length() {
     return this.count;
   }
 
@@ -47,3 +47,4 @@ myStack.push(2);
 console.debug(myStack.peek()); // should return 2
 console.debug(myStack.pop()); // should pop off and return 2
 console.debug(myStack.peek()); // should return 4
+console.debug(myStack.length()) // count
