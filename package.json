@@ -15,5 +15,9 @@
 	"bugs": {
 		"url": "https://github.com/userAugustos/Algorithms/issues"
 	},
-	"homepage": "https://github.com/userAugustos/Algorithms#readme"
+	"homepage": "https://github.com/userAugustos/Algorithms#readme",
+	"dependencies": {
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3"
+	}
 }
